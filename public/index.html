@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <h2>{{person.name}} 今年 {{person.age}} 岁</h2>
+        <h3>{{msg}}</h3>
+        <div v-text='msg'></div>
+        <div v-text='person.name'></div>
+        <div v-html='htmlStr'></div>
+        <div>{{arr}}</div>
+        <input type="text" v-model='msg'>
+        <button v-on:click="handleClick">v-on:click</button>
+        <button @click="handleClick">@click</button>
+        <div>
+            <a v-bind:href="href">click me v-bind:href="href"</a>
+            <br>
+            <a :href="href">click me :href</a>
+        </div>
+    </div>
+</body>
+
+</html>
