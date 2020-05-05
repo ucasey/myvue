@@ -6,19 +6,17 @@ const vm = new Vue({
             name: "monk",
             age: "18"
         },
-        msg: "vue 响应式",
-        htmlStr: "这是html的内容",
+        textStr: "vue 响应式的text指令",
+        htmlStr: "vue 响应式的html指令",
+        modelStr: "monk",
         arr: [1, 2, 3],
         href:"https://www.baidu.com"
 
     },
     methods: {
         handleClick: function () {
-            // console.log('这是一个处理点击事件的方法');
-            // this.person.name = "young monk"
-            this.arr.push(1)
-            console.log(this.arr)
-            this.arr.sort()
+            this.person.name = "the young monk"
+            this.arr.push(Math.floor(Math.random()*10))
         }
     }
 })

@@ -3,8 +3,8 @@ export default class Complie {
     constructor(el, vm) {
         this.el = this.isNodeElement(el) ? el : document.querySelector(el);
         this.vm = vm;
-        // 1、将所有的dom对象放到fragement文档碎片中，防止回流
-        const fragments = this.node2fragments(this.el)
+        // 1、将所有的dom对象放到fragement文档碎片中,防止回流
+        const fragments = this.nodeTofragments(this.el)
         // 2、编译模板
         this.complie(fragments)
         // 3、追加子元素到根元素
@@ -21,7 +21,7 @@ export default class Complie {
                 //编译文本节点
                 this.complieText(ele)
             }
-            //如果有子节点，循环遍历，编译指令
+            //如果有子节点,循环遍历,编译指令
             if (ele.childNodes && ele.childNodes.length) {
                 this.complie(ele)
             }
@@ -32,7 +32,7 @@ export default class Complie {
         const attrs = node.attributes;
         //2.筛选出是属性的
         [...attrs].forEach(attr => {
-            //attr是一个对象，name是属性名，value是属性值
+            //attr是一个对象,name是属性名,value是属性值
             const {
                 name,
                 value
@@ -69,8 +69,8 @@ export default class Complie {
             complieUtils['text'](node, text, this.vm)
         }
     }
-    node2fragments(el) {
-        //获取文档中的dom节点，将dom节点加到文档碎片中
+    nodeTofragments(el) {
+        //获取文档中的dom节点,将dom节点加到文档碎片中
         const f = document.createDocumentFragment()
         let firstChild;
         while (firstChild = el.firstChild) {

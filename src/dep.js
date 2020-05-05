@@ -1,7 +1,7 @@
-// 订阅者
+// 订阅者收集器
 export default class Dep {
     constructor() {
-        //管理的watcher
+        //管理的watcher的数组
         this.subs = []
     }
     addSubs(watcher) {
@@ -10,7 +10,6 @@ export default class Dep {
     }
     notify() {
         //通知watcher更新dom
-        console.log("通知watcher 更新数据", this.subs)
         this.subs.forEach(w => w.update())
     }
 }

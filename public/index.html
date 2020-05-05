@@ -10,12 +10,12 @@
 <body>
     <div id="app">
         <h2>{{person.name}} 今年 {{person.age}} 岁</h2>
-        <h3>{{msg}}</h3>
-        <div v-text='msg'></div>
+        <div v-text='textStr'></div>
         <div v-text='person.name'></div>
         <div v-html='htmlStr'></div>
         <div>{{arr}}</div>
-        <input type="text" v-model='msg'>
+        <div>{{modelStr}}</div>
+        name：<input type="text" v-model='modelStr'>
         <button v-on:click="handleClick">v-on:click</button>
         <button @click="handleClick">@click</button>
         <div>
