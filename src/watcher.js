@@ -1,5 +1,5 @@
 import Dep from './dep'
-import {complieUtils} from './utils'
+import { complieUtils } from './utils'
 export default class Watcher {
     constructor(vm, expr, cb) {
         this.vm = vm;
@@ -19,7 +19,7 @@ export default class Watcher {
     }
     update() {
         const newVal = complieUtils.getValue(this.expr, this.vm)
-        if (newVal !== this.oldVal) {
+        if (newVal !== this.oldVal || Array.isArray(newVal)) {
             this.cb(newVal)
         }
     }

@@ -9,7 +9,7 @@ export default class Vue {
         new Observer(this.$data)
         //2.编译模板
         new Complie(this.$el, this)
-        if (this.$el) {
+        if (this.$el) { //如果有模板
             this.proxyData(this.$data)
         }
     }

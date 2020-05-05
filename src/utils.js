@@ -70,7 +70,7 @@ export const complieUtils = {
     bind(node, expr, vm, paramName) {
         // v-bind:href='xxx' => href='xxx'
         const value = this.getValue(expr, vm)
-        this.updater.updaterAttr(node,paramName,value)
+        this.updater.updaterAttr(node, paramName, value)
     },
 
     //更新函数
@@ -84,7 +84,7 @@ export const complieUtils = {
         updaterModel(node, value) {
             node.value = value
         },
-        updaterAttr(node,key,value){
+        updaterAttr(node, key, value) {
             node.setAttribute(key, value);
         }
     }

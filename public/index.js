@@ -18,6 +18,7 @@ const vm = new Vue({
             // this.person.name = "young monk"
             this.arr.push(1)
             console.log(this.arr)
+            this.arr.sort()
         }
     }
 })

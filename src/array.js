@@ -1,15 +1,12 @@
-import Dep from './dep'
 const arrayProto = Array.prototype;
 const arrayMethods = Object.create(arrayProto);
 ['push', 'pop', 'shift', 'unshift', 'reverse', 'sort', 'splice'].forEach(ele => {
-    arrayMethods[ele] = function (e) {
+    arrayMethods[ele] = function () {
+        // 1、执行变异数组的原生方法,完成其需要完成的内容
         arrayProto[ele].call(this, ...arguments)
-        //执行渲染函数
-        console.log("我执行了渲染函数")
-        // 1、将开发者的参数传给原生的方法，保证数组按照开发者的想法被改变
         // 2、视图更新等
         const ob = this.__ob__
-        console.log(ob)
+        ob.dep.notify()
     }
 })
 export {
